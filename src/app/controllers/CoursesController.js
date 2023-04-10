@@ -1,18 +1,17 @@
 const Course = require('../models/Course');
-const { mongooseToObject } = require('../../util/mongoose')
+const { mongooseToObject } = require('../../util/mongoose');
 
 class CoursesController {
     // [GET] /courses/:slug
     show(req, res, next) {
-        Course.findOne({slug: req.params.slug})
+        Course.findOne({ slug: req.params.slug })
             .then((courses) => {
-                res.render('courses/show',{
-                    courses: mongooseToObject(courses)
-                })
+                res.render('courses/show', {
+                    courses: mongooseToObject(courses),
+                });
             })
-            .catch(next)
+            .catch(next);
     }
-
 }
 
 module.exports = new CoursesController();

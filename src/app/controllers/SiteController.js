@@ -1,5 +1,5 @@
 const Course = require('../models/Course');
-const { mutipleMongooseToObject } = require('../../util/mongoose')
+const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     // [GET] /
@@ -17,13 +17,13 @@ class SiteController {
                 // res.json(courses);
                 // courses = courses.map((courses) => courses.toObject());
                 res.render('home', {
-                    courses : mutipleMongooseToObject(courses)
+                    courses: mutipleMongooseToObject(courses),
                 });
             })
-            .catch(next)
-            // .catch((err) => {
-            //     res.status(400).json({ error: 'ERROR..!!!' });
-            // });
+            .catch(next);
+        // .catch((err) => {
+        //     res.status(400).json({ error: 'ERROR..!!!' });
+        // });
 
         // res.render('home');
     }
