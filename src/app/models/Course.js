@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const slug = require('mongoose-slug-generator');
-
-mongoose.plugin(slug);
+const slug = require('mongoose-slug-updater');
+const mongooseDelete = require('mongoose-delete');
+// const { all } = require('../../routes/me');
 
 const Course = new Schema(
     {
@@ -18,16 +18,11 @@ const Course = new Schema(
     },
 );
 
-Course.deleteCourseById = async function (courseId) {
-    try {
-        const result = await this.deleteOne({ _id: courseId }).exec();
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
-};
+mongoose.plugin(slug);
+Course.plugin(mongooseDelete, {
+    deletedAt: true,
+    overrideMethods: 'all',
+});
 
 module.exports = mongoose.model('Course', Course);
 // module.exports = mongoose.model('Course', Course,'courses');
