@@ -5,7 +5,7 @@ const coursesController = require('../app/controllers/CoursesController');
 
 // newsController.index
 
-router.get('/create',coursesController.create);
+router.get('/create', coursesController.create);
 router.post('/store', coursesController.store);
 router.post('/handle-form-actions', coursesController.handleFormActions);
 router.get('/:id/edit', coursesController.edit);

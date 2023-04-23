@@ -6,7 +6,7 @@ const mongooseDelete = require('mongoose-delete');
 
 const Course = new Schema(
     {
-        _id: { type: Number } ,
+        _id: { type: Number },
         name: { type: String, maxLength: 255, required: true },
         description: { type: String, maxLength: 600 },
         image: { type: String, maxLength: 255 },
