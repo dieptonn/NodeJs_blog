@@ -1,0 +1,34 @@
+h1 {
+  color: rgb(200, 35, 10);
+}
+
+.card-course-item {
+  margin-top: 16px !important;
+}
+
+#oke1 {
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+#oke2 {
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.user-avartar {
+  border-radius: 50%;
+}
+
+.checkbox-select-all-option {
+  width: 170px !important;
+  margin: 0 16px;
+}/*# sourceMappingURL=app.css.map */
